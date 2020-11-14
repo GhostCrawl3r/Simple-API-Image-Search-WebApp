@@ -1,0 +1,11 @@
+.image {
+    flex-direction: row;
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+}
+
+.image img:hover {
+    opacity: 0.5%;
+}

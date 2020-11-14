@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.card {
+    padding: 0;
+    margin: 0;
+}
+
+.gridList {
+    width: 300px;
+    height: 300px;
+}
+
+
+@media (max-width: 770px){
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin:0 15%;
+        grid-row-gap: 20px;
+    }
+}
