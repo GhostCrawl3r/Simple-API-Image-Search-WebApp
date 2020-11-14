@@ -19,11 +19,15 @@ function App() {
   
   return (
     <div className="app">
-        <Grid xs={12} direction="row" justify="space-between" alignItems="center">
+        <Grid container item xs={12} >
             <NavBar favourites={favourites} />
         </Grid>
-      <Search getSearch={getSearch}/>
+        <Grid>
+            <Search getSearch={getSearch}/>
+        </Grid>
+        <Grid>
       <ImageResults results={api} />
+      </Grid>
     </div>
   );
 }

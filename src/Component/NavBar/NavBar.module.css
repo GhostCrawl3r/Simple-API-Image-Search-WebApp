@@ -1,3 +1,9 @@
 .typoStyles {
     flex: 1;
 }
+
+@media (max-width: 770px){
+    .typoStyles {
+
+    }
+}

@@ -10,7 +10,7 @@ const NavBar = ({ favourites }) => {
     
     
     return (
-         <Grid>
+         <Grid container item xs={12}>
                 <AppBar position='static'>
                     <Toolbar>
                         <Typography  variant="h6" noWrap className={styles.typoStyles}>Image Searcher</Typography>
