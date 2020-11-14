@@ -17,7 +17,7 @@ function Home () {
     
     return (
         <div className="app">
-            <Grid container item xs={12} >
+            <Grid container item xs={12}>
                 <NavBar favourites={favourites} />
             </Grid>
             <Grid>
