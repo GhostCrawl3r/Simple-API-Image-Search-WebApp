@@ -5,6 +5,7 @@ import { fetchAPI } from './api';
 import Search from "./Component/Search/Search.component";
 import ImageResults from "./Component/ImageResults/ImageResults.component";
 import NavBar from "./Component/NavBar/NavBar.component";
+import {Grid} from "@material-ui/core";
 
 function App() {
   const [ api, getAPI ] = useState({});
@@ -18,7 +19,9 @@ function App() {
   
   return (
     <div className="app">
-      <NavBar favourites={favourites} />
+        <Grid xs={12} direction="row" justify="space-between" alignItems="center">
+            <NavBar favourites={favourites} />
+        </Grid>
       <Search getSearch={getSearch}/>
       <ImageResults results={api} />
     </div>

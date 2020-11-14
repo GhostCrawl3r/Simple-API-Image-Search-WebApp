@@ -1,21 +1,21 @@
 import React from 'react';
-import {AppBar, Badge, IconButton, Toolbar, Typography} from "@material-ui/core";
+import {AppBar, Badge, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 import styles from './NavBar.module.css';
 
 const NavBar = ({ favourites }) => {
     
-    // const notificationNum = favourites.length;
+    // create a const which lists the items in favourites as an interger to display as badgecontent.
     
     
     return (
-            <div >
-                <AppBar className={styles.appBar} color='inherit'>
+         <Grid>
+                <AppBar position='static'>
                     <Toolbar>
-                        <Typography  variant="h6" noWrap>Image Searcher</Typography>
+                        <Typography  variant="h6" noWrap className={styles.typoStyles}>Image Searcher</Typography>
                         <div />
-                        <div className={styles.container}>
+                        <div>
                             <IconButton aria-label="show 10 new notifications" color="inherit">
                                 <Badge badgeContent={10} color="secondary">
                                     <FavoriteBorderIcon />
@@ -24,7 +24,7 @@ const NavBar = ({ favourites }) => {
                         </div>
                     </Toolbar>
                 </AppBar>
-            </div>
+         </Grid>
     );
 };
 
