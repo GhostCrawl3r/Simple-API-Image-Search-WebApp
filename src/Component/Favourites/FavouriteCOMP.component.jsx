@@ -1,9 +1,8 @@
 import React, {useContext} from 'react';
 import styles from './FavouriteCOMP.modules.css';
-import {IconButton, Typography} from "@material-ui/core";
+import {Typography} from "@material-ui/core";
 import {FavouritesContext} from "../../context/GlobalContext";
-import { GridList, GridListTile, Card, CardMedia } from "@material-ui/core";
-import DeleteIcon from '@material-ui/icons/Delete';
+import { GridList, GridListTile} from "@material-ui/core";
 
 
 const FavouriteCOMP = () => {
@@ -16,29 +15,26 @@ const FavouriteCOMP = () => {
         }
         return finalCols;
     }
-    console.log(favourites);
+    
+    const handleClick = e => {
+        const newARR = [...favourites].filter(item => item != e);
+        setFavourites(newARR);
+    }
     
     return (
         <div className={styles.container}>
             <br/>
-            <Typography variant='h3' className={styles.title}>Favourites</Typography>
+            <div className={styles.title}>
+                <Typography variant='h3'>Favourites</Typography>
+                <Typography variant='subtitle1'>Click on an image to remove it from your favourites.</Typography>
+            </div>
             <br/>
                 <GridList className={styles.gridList} cols={colsDef()} cellHeight={300} spacing={5}>
                     {favourites.length ? (
                         favourites.map(item => {
                             return (
                                 <GridListTile key={Math.floor(Math.random() * 1000000)}>
-                                    {/*<Card elevation={3}>*/}
-                                    {/*    <CardMedia*/}
-                                    {/*        className={styles.image}*/}
-                                    {/*        image={item}*/}
-                                    {/*        src={item}*/}
-                                    {/*        />*/}
-                                    {/*    <IconButton className={styles.icon}>*/}
-                                    {/*        <DeleteIcon color="secondary"/>*/}
-                                    {/*    </IconButton>*/}
-                                    {/*</Card>*/}
-                                    <img src={item} />
+                                    <img src={item} onClick={() => handleClick(item)} />
                                 </GridListTile>
                             )
                         })) : (
@@ -50,3 +46,15 @@ const FavouriteCOMP = () => {
 };
 
 export default FavouriteCOMP;
+
+
+{/*<Card elevation={3}>*/}
+{/*    <CardMedia*/}
+{/*        className={styles.image}*/}
+{/*        image={item}*/}
+{/*        src={item}*/}
+{/*        />*/}
+{/*    <IconButton className={styles.icon}>*/}
+{/*        <DeleteIcon color="secondary"/>*/}
+{/*    </IconButton>*/}
+{/*</Card>*/}

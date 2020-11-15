@@ -19,3 +19,7 @@ gridList {
     background-size: cover!important;
     height: 300px!important;
 }
+
+.title {
+    padding-left: 50px!important;
+}
