@@ -15,7 +15,7 @@ const NavBar = ({ favourites }) => {
                 <AppBar position='static'>
                     <Toolbar>
                         <Link to='/' style={{ textDecoration: 'none', color: 'white', flex: '1'}}>
-                        <Typography  variant="h6" noWrap className={styles.typoStyles}>Image Searcher</Typography>
+                        <Typography  variant="h6" noWrap className={styles.typoStyles}>Imager-Nation</Typography>
                         </Link>
                         <div />
                         <div>

@@ -21,9 +21,9 @@ function Home () {
         return (
             <Grid container item xs={12} alignItems="center" alignContent="center">
                 <Paper elevation={3} square={true} className={styles.container}>
-                        <Typography variant='h3'>Warning!</Typography>
-                        <Typography variant='h6'>This site may contain images of an adult nature, please proceed with caution.</Typography>
-                        <Button onClick={() => setLoad(true)} color="secondary" variant="contained">okay</Button>
+                        <Typography variant='h3' align="center">Warning!</Typography>
+                        <Typography variant='h6' align="center">This site may contain images of an adult nature, please proceed with caution.</Typography>
+                        <Button onClick={() => setLoad(true)} color="secondary" variant="contained">Okay</Button>
                 </Paper>
             </Grid>
         );

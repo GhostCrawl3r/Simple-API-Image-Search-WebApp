@@ -13,26 +13,30 @@
 }
 
 .container Button {
-    padding: 10px 0;
+    padding: 10px 50px;
+    margin: 0 38%;
 }
 
 @media (max-width: 770px) {
     .container {
-        max-width: 65vw;
+        max-width: 100%;
         padding: 20px;
         margin: 5vh 0;
     }
 
     .container h3 {
         padding: 10px 0;
+        text-align: left;
     }
 
     .container h6 {
         padding: 10px 0;
-        max-width: 70vw;
+        max-width: 100%;
+        text-align: left;
     }
 
     .container Button {
-        padding: 10px 0;
+        padding: 10px 50px;
+        margin:10px 0;
     }
 }
