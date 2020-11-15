@@ -28,16 +28,17 @@ const FavouriteCOMP = () => {
                         favourites.map(item => {
                             return (
                                 <GridListTile key={Math.floor(Math.random() * 1000000)}>
-                                    <Card elevation={3}>
-                                        <CardMedia
-                                            className={styles.image}
-                                            image={item}
-                                            src={item}
-                                            />
-                                        <IconButton className={styles.icon}>
-                                            <DeleteIcon color="secondary"/>
-                                        </IconButton>
-                                    </Card>
+                                    {/*<Card elevation={3}>*/}
+                                    {/*    <CardMedia*/}
+                                    {/*        className={styles.image}*/}
+                                    {/*        image={item}*/}
+                                    {/*        src={item}*/}
+                                    {/*        />*/}
+                                    {/*    <IconButton className={styles.icon}>*/}
+                                    {/*        <DeleteIcon color="secondary"/>*/}
+                                    {/*    </IconButton>*/}
+                                    {/*</Card>*/}
+                                    <img src={item} />
                                 </GridListTile>
                             )
                         })) : (
