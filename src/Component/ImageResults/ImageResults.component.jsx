@@ -21,9 +21,10 @@ const ImageResults = () => {
     }
     
     const handleIconClick = item => {
-        const favList = [...favourites, item]
-        setFavourites(favList);
-        setFavouriteClick(true);
+        if(!favourites.includes(item)){
+            const favList = [...favourites, item]
+            setFavourites(favList);
+        }
     }
     
     useEffect(async () => {
