@@ -7,7 +7,7 @@ const base = {
 
 export const fetchAPI = async (item) => {
     try {
-        const apiSearch = await axios.get(`${base.url}${base.key}&q=${item}&per_page=10`);
+        const apiSearch = await axios.get(`${base.url}${base.key}&q=${item}&per_page=25`);
         return apiSearch.data;
     }
     catch (e) {
