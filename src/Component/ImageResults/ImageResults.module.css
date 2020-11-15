@@ -3,11 +3,22 @@
     justify-content: space-around;
 }
 
+.card {
+    border-color: rgba(0,0,0,0.2);
+    border-width: thin;
+    border-style: solid;
+}
+
 gridList {
     width: 1500px;
     height: 1000px;
 }
 
-image {
+.image {
     background-size: contain;
+    height:240px !important;
+}
+
+.gridContainer {
+    align-items: center;
 }
