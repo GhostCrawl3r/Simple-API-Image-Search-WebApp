@@ -7,3 +7,8 @@ This will only be front-end code, this may change in the future.
 - React Hooks
 - Material-UI
 - Axios 
+
+## Trello List
+If you're interested in seeing what updates I will be doing / have fixed check out this Trello Board: https://trello.com/b/OAaV5uJ6/image-search
+
+Sadly I got the bright idea to make this board 3 days into the project, so a lot of the earlier things aren't on here. However, most of the earlier stuff was me fiddling with CSS, so you didn't miss much!
