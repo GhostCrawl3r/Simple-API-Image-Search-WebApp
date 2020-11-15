@@ -1,0 +1,38 @@
+.container {
+    width: 600px;
+    padding: 20px;
+    margin: 30vh auto;
+}
+
+.container h3 {
+    padding: 10px 0;
+}
+
+.container h6 {
+    padding: 10px 0;
+}
+
+.container Button {
+    padding: 10px 0;
+}
+
+@media (max-width: 770px) {
+    .container {
+        max-width: 65vw;
+        padding: 20px;
+        margin: 5vh 0;
+    }
+
+    .container h3 {
+        padding: 10px 0;
+    }
+
+    .container h6 {
+        padding: 10px 0;
+        max-width: 70vw;
+    }
+
+    .container Button {
+        padding: 10px 0;
+    }
+}
