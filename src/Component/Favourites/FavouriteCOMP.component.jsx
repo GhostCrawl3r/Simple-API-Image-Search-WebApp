@@ -34,7 +34,7 @@ const FavouriteCOMP = () => {
                         favourites.map(item => {
                             return (
                                 <GridListTile key={Math.floor(Math.random() * 1000000)}>
-                                    <img src={item} alt='favourited' onClick={() => handleClick(item)} />
+                                    <img src={item} alt='favourited' onClick={() => handleClick(item)} className={styles.image} />
                                 </GridListTile>
                             )
                         })) : (
