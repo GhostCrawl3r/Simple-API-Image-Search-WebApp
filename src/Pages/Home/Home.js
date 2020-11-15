@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Grid, Paper, Typography, Button} from "@material-ui/core";
 import Search from "../../Component/Search/Search.component";
 import ImageResults  from "../../Component/ImageResults/ImageResults.component";
