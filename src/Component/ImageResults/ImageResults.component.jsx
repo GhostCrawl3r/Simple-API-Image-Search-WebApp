@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ImageResults.module.css';
-import {GridList, GridListTile, Card, CardMedia, IconButton, Grid, Icon} from "@material-ui/core";
+import {GridList, GridListTile, Card, CardMedia, IconButton} from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import LinkIcon from '@material-ui/icons/Link';
