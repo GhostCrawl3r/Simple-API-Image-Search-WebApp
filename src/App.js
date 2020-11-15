@@ -4,7 +4,7 @@ import 'fontsource-roboto';
 
 import Home from "./Pages/Home/Home";
 import { Route, BrowserRouter as Router } from "react-router-dom";
-import Favourites from "./Pages/Favourites";
+import Favourites from "./Pages/Favourites/Favourites";
 
 function App() {
   
