@@ -7,10 +7,17 @@ import LinkIcon from '@material-ui/icons/Link';
 import {APIContext, FavouritesContext} from "../../context/GlobalContext";
 
 const ImageResults = () => {
-    const [ api, getAPI ] = useContext(APIContext);
+    const [api, getAPI ] = useContext(APIContext);
     const [favourites, setFavourites] = useContext(FavouritesContext);
     const [favouriteClick, setFavouriteClick] = useState(false);
     const data = api.hits;
+    
+    useEffect(async () => {
+        let savedFavorite = await localStorage.getItem('__Fav');
+        if(savedFavorite) {
+            setFavouriteClick(savedFavorite);
+        }
+    }, [])
     
     const colsDef = () => {
         let finalCols = 5;
@@ -26,15 +33,6 @@ const ImageResults = () => {
             setFavourites(favList);
         }
     }
-    
-    useEffect(async () => {
-        let savedFavorite = await localStorage.getItem('__Fav');
-        if(savedFavorite) {
-            setFavouriteClick(savedFavorite);
-        }
-    }, [])
-    
-    // console.log(favouriteClick);
     
     return (
         <div className={styles.container}>
