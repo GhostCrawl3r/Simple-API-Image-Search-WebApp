@@ -9,7 +9,7 @@ const Search = ({getSearch}) => {
     }
     
     return (
-        <form className={styles.container}>
+        <form className={styles.container} onSubmit={null}>
             <TextField
                 margin='normal'
                 id="standard-basic"
