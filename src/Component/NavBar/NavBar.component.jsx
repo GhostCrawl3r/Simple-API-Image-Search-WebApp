@@ -13,7 +13,7 @@ const NavBar = () => {
     
     return (
          <Grid container item xs={12}>
-                <AppBar position='static'>
+                <AppBar position='fixed'>
                     <Toolbar>
                         <Link to='/' style={{ textDecoration: 'none', color: 'white', flex: '1'}}>
                         <Typography  variant="h6" noWrap className={styles.typoStyles}>Imager-Nation</Typography>

@@ -17,7 +17,7 @@ const FavouriteCOMP = () => {
     }
     
     const handleClick = e => {
-        const newARR = [...favourites].filter(item => item != e);
+        const newARR = [...favourites].filter(item => item !== e);
         setFavourites(newARR);
     }
     
@@ -34,7 +34,7 @@ const FavouriteCOMP = () => {
                         favourites.map(item => {
                             return (
                                 <GridListTile key={Math.floor(Math.random() * 1000000)}>
-                                    <img src={item} onClick={() => handleClick(item)} />
+                                    <img src={item} alt='favourited-image' onClick={() => handleClick(item)} />
                                 </GridListTile>
                             )
                         })) : (

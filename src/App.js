@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import './App.css';
 import 'fontsource-roboto';
 
@@ -7,7 +7,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import Favourites from "./Pages/Favourites/Favourites";
 
 function App() {
-  
+
   return (
     <Router>
         <Route exact path='/' component={Home} />
