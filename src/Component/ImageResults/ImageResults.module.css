@@ -9,7 +9,7 @@
     border-style: solid;
 }
 
-gridList {
+.gridList {
     width: 1500px;
     height: 1000px;
 }
@@ -22,3 +22,9 @@ gridList {
 .gridContainer {
     align-items: center;
 }
+
+.icon:active {
+    color: red!important;
+}
+
+
