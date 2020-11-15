@@ -23,7 +23,7 @@ const FavouriteCOMP = () => {
     
     return (
         <div className={styles.container}>
-            <br/>
+            <br/><br/><br/><br/>
             <div className={styles.title}>
                 <Typography variant='h3'>Favourites</Typography>
                 <Typography variant='subtitle1'>Click on an image to remove it from your favourites.</Typography>
@@ -34,7 +34,7 @@ const FavouriteCOMP = () => {
                         favourites.map(item => {
                             return (
                                 <GridListTile key={Math.floor(Math.random() * 1000000)}>
-                                    <img src={item} alt='favourited-image' onClick={() => handleClick(item)} />
+                                    <img src={item} alt='favourited' onClick={() => handleClick(item)} />
                                 </GridListTile>
                             )
                         })) : (
@@ -46,15 +46,3 @@ const FavouriteCOMP = () => {
 };
 
 export default FavouriteCOMP;
-
-
-{/*<Card elevation={3}>*/}
-{/*    <CardMedia*/}
-{/*        className={styles.image}*/}
-{/*        image={item}*/}
-{/*        src={item}*/}
-{/*        />*/}
-{/*    <IconButton className={styles.icon}>*/}
-{/*        <DeleteIcon color="secondary"/>*/}
-{/*    </IconButton>*/}
-{/*</Card>*/}

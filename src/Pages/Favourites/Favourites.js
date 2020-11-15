@@ -9,7 +9,7 @@ function Favourites() {
             <Grid container item xs={12} >
                 <NavBar />
             </Grid>
-                <Grid>
+                <Grid container item xs={12}>
                     <FavouriteCOMP />
                 </Grid>
         </div>
