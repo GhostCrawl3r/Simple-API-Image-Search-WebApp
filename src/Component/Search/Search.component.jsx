@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './Search.module.css';
 import { TextField } from "@material-ui/core";
+import {SearchContext} from "../../context/GlobalContext";
 
-const Search = ({getSearch}) => {
+const Search = () => {
+    const [ search, getSearch ] = useContext(SearchContext)
     
     const handleChange = e => {
         getSearch(e.target.value);

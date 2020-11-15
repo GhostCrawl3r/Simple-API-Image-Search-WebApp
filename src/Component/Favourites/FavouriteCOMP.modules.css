@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    border-color: rgba(0,0,0,0.2);
+    border-width: thin;
+    border-style: solid;
+}
+
+gridList {
+    width: 1500px;
+    height: 1000px;
+    background-size: cover!important;
+}
+
+.image  {
+    background-size: cover!important;
+    height: 300px!important;
+}

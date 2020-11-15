@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import styles from './ImageResults.module.css';
 import { GridList, GridListTile, Card, CardMedia, IconButton } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import LinkIcon from '@material-ui/icons/Link';
+import {APIContext, FavouritesContext} from "../../context/GlobalContext";
 
-const ImageResults = ({results}) => {
-    const [click, setClick] = useState(false);
-    const data = results.hits;
+const ImageResults = () => {
+    const [ api, getAPI ] = useContext(APIContext);
+    const [favourites, setFavourites] = useContext(FavouritesContext);
+    const [favouriteClick, setFavouriteClick] = useState(false);
+    const data = api.hits;
     
     const colsDef = () => {
         let finalCols = 5;
@@ -17,9 +20,20 @@ const ImageResults = ({results}) => {
         return finalCols;
     }
     
-    const handleIconClick = () => {
-        setClick(!click);
+    const handleIconClick = item => {
+        const favList = [...favourites, item]
+        setFavourites(favList);
+        setFavouriteClick(true);
     }
+    
+    useEffect(async () => {
+        let savedFavorite = await localStorage.getItem('__Fav');
+        if(savedFavorite) {
+            setFavouriteClick(savedFavorite);
+        }
+    }, [])
+    
+    // console.log(favouriteClick);
     
     return (
         <div className={styles.container}>
@@ -33,9 +47,9 @@ const ImageResults = ({results}) => {
                                             src={item.largeImageURL}
                                             image={item.largeImageURL}
                                         />
-                                        <IconButton className={styles.icon} onClick={handleIconClick}>
-                                            {!click
-                                                ? <FavoriteBorderOutlinedIcon />
+                                        <IconButton className={styles.icon} onClick={() => handleIconClick(item.largeImageURL)}>
+                                            {favouriteClick == false
+                                                ? <FavoriteBorderOutlinedIcon key="__Fav'"/>
                                                 :   <FavoriteIcon />
                                             }
                                         </IconButton>

@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { Grid, Paper, Typography, Button} from "@material-ui/core";
 import Search from "../../Component/Search/Search.component";
 import ImageResults  from "../../Component/ImageResults/ImageResults.component";
 import NavBar  from "../../Component/NavBar/NavBar.component";
-import { fetchAPI } from "../../api";
 import styles from './Home.module.css';
+import {LoadContext} from "../../context/GlobalContext";
 
 function Home () {
-    const [ api, getAPI ] = useState({});
-    const [ search, getSearch ] = useState('');
-    const [favourites, setFavourites] = useState([]);
-    const [load, setLoad] = useState(false);
-    
-    useEffect (  async () => {
-        const fetchedAPI = await fetchAPI(search);
-        getAPI(fetchedAPI);
-    }, [search]);
+    const [load, setLoad] = useContext(LoadContext);
     
     const loadModal = () => {
         return (
@@ -34,13 +26,13 @@ function Home () {
                     {load ? (
                         <div>
                             <Grid container item xs={12}>
-                                <NavBar favourites={favourites} />
+                                <NavBar />
                             </Grid>
                             <Grid>
-                                <Search getSearch={getSearch}/>
+                                <Search />
                             </Grid>
                             <Grid>
-                                <ImageResults results={api} />
+                                <ImageResults />
                             </Grid>
                         </div>
                     ) : loadModal()}

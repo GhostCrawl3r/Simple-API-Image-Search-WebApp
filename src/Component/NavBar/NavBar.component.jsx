@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {AppBar, Badge, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 import styles from './NavBar.module.css';
 import { Link } from 'react-router-dom';
+import { FavouritesContext } from "../../context/GlobalContext";
 
-const NavBar = ({ favourites }) => {
+const NavBar = () => {
     
-    // create a const which lists the items in favourites as an interger to display as badgecontent.
+    const [favourites, setFavourites] = useContext(FavouritesContext);
     
     
     return (
@@ -21,7 +22,7 @@ const NavBar = ({ favourites }) => {
                         <div>
                         <Link to='/favourites' style={{ textDecoration: 'none', color: 'white'}}>
                             <IconButton aria-label="show 10 new notifications" color="inherit">
-                                <Badge badgeContent={10} color="secondary">
+                                <Badge badgeContent={favourites.length} color="secondary">
                                     <FavoriteBorderIcon />
                                 </Badge>
                             </IconButton>
