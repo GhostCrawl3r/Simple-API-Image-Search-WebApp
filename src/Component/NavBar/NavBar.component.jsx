@@ -1,6 +1,7 @@
-import React, {useContext} from 'react';
-import {AppBar, Badge, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
+import React, {useContext, useState} from 'react';
+import {AppBar, Badge, Grid, IconButton, Toolbar, Typography, Snackbar} from "@material-ui/core";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import MuiAlert from '@material-ui/lab/Alert';
 
 import styles from './NavBar.module.css';
 import { Link } from 'react-router-dom';

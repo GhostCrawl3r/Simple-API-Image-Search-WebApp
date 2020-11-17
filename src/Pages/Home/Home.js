@@ -5,6 +5,8 @@ import ImageResults  from "../../Component/ImageResults/ImageResults.component";
 import NavBar  from "../../Component/NavBar/NavBar.component";
 import styles from './Home.module.css';
 import {LoadContext} from "../../context/GlobalContext";
+import ReactNotification from 'react-notifications-component';
+import 'react-notifications-component/dist/theme.css';
 
 function Home () {
     const [load, setLoad] = useContext(LoadContext);
@@ -32,6 +34,7 @@ function Home () {
                                 <Search />
                             </Grid>
                             <Grid>
+                                <ReactNotification />
                                 <ImageResults />
                             </Grid>
                         </div>

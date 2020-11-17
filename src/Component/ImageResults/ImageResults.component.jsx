@@ -1,13 +1,15 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './ImageResults.module.css';
-import { GridList, GridListTile, Card, CardMedia, IconButton } from "@material-ui/core";
+import {GridList, GridListTile, Card, CardMedia, IconButton, Snackbar, Grid} from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import LinkIcon from '@material-ui/icons/Link';
 import {APIContext, FavouritesContext} from "../../context/GlobalContext";
+import {store} from 'react-notifications-component';
 
 const ImageResults = () => {
     const [api, getAPI ] = useContext(APIContext);
     const [favourites, setFavourites] = useContext(FavouritesContext);
+    const [notification, setNotification] = useState(false);
     const data = api.hits;
     
     
@@ -24,6 +26,16 @@ const ImageResults = () => {
             const favList = [...favourites, item]
             setFavourites(favList);
         }
+        store.addNotification({
+            title: 'Image favourited',
+            message: 'Image was successfully added to your favourites list!',
+            type: 'success',
+            container: 'top-right',
+            insert: 'top',
+            dismiss: {
+                duration: 2000,
+            }
+        })
     }
     
     return (
