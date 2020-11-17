@@ -24,17 +24,29 @@ const ImageResults = () => {
         if(!favourites.includes(item)){
             const favList = [...favourites, item]
             setFavourites(favList);
+            store.addNotification({
+                title: 'Image favourited',
+                message: 'Image was successfully added to your favourites list! - Go to the favourites page to remove (top right)',
+                type: 'success',
+                container: 'top-right',
+                insert: 'top',
+                dismiss: {
+                    duration: 5000,
+                }
+            })
         }
-        store.addNotification({
-            title: 'Image favourited',
-            message: 'Image was successfully added to your favourites list!',
-            type: 'success',
-            container: 'top-right',
-            insert: 'top',
-            dismiss: {
-                duration: 5000,
-            }
-        })
+        if(favourites.includes(item)) {
+            store.addNotification({
+                title: 'Image already favourited',
+                message: 'This image has already been favourited by you.',
+                type: 'danger',
+                container: 'top-right',
+                insert: 'top',
+                dismiss: {
+                    duration: 5000,
+                }
+            })
+        }
     }
     
     return (
