@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import styles from './ImageResults.module.css';
 import {GridList, GridListTile, Card, CardMedia, IconButton, Tooltip} from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
@@ -36,10 +36,12 @@ const ImageResults = () => {
             })
         }
         if(favourites.includes(item)) {
+            const newARR = [...favourites].filter(newItem => newItem !== item);
+            setFavourites(newARR);
             store.addNotification({
-                title: 'Image already favourited',
-                message: 'This image has already been favourited by you.',
-                type: 'danger',
+                title: 'Image removed from favourites',
+                message: 'This image has now been removed from your favourites!',
+                type: 'warning',
                 container: 'top-right',
                 insert: 'top',
                 dismiss: {
