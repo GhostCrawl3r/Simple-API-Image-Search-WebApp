@@ -1,7 +1,6 @@
-import React, {useContext, useState} from 'react';
-import {AppBar, Badge, Grid, IconButton, Toolbar, Typography, Snackbar} from "@material-ui/core";
+import React, {useContext} from 'react';
+import {AppBar, Badge, Grid, IconButton, Toolbar, Typography, Tooltip} from "@material-ui/core";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import MuiAlert from '@material-ui/lab/Alert';
 
 import styles from './NavBar.module.css';
 import { Link } from 'react-router-dom';
@@ -17,14 +16,18 @@ const NavBar = () => {
                 <AppBar position='fixed'>
                     <Toolbar>
                         <Link to='/' style={{ textDecoration: 'none', color: 'white', flex: '1'}}>
+                        <Tooltip title='Home'>
                         <Typography  variant="h6" noWrap className={styles.typoStyles}>Imager-Nation</Typography>
+                        </Tooltip>
                         </Link>
                         <div />
                         <div>
                         <Link to='/favourites' style={{ textDecoration: 'none', color: 'white'}}>
                             <IconButton aria-label="show 10 new notifications" color="inherit">
                                 <Badge badgeContent={favourites.length} color="secondary">
+                                    <Tooltip title='Your favourites list'>
                                     <FavoriteBorderIcon />
+                                    </Tooltip>
                                 </Badge>
                             </IconButton>
                         </Link>

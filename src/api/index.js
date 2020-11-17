@@ -8,9 +8,9 @@ const base = {
 //Add Page to the search below, default is 1. Each incriment will move you to the next page.
 // Docs: https://pixabay.com/api/docs/
 
-export const fetchAPI = async (item) => {
+export const fetchAPI = async (item, page) => {
     try {
-        const apiSearch = await axios.get(`${base.url}${base.key}&q=${item}&per_page=25`);
+        const apiSearch = await axios.get(`${base.url}${base.key}&q=${item}&page=${page}&per_page=20`);
         return apiSearch.data;
     }
     catch (e) {

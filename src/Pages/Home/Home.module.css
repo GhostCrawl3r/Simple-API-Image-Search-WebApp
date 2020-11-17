@@ -17,6 +17,10 @@
     margin: 0 38%;
 }
 
+.pagi {
+    margin: 20px auto;
+}
+
 @media (max-width: 770px) {
     .container {
         max-width: 100%;

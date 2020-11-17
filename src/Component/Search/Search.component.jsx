@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import styles from './Search.module.css';
-import { TextField } from "@material-ui/core";
+import { TextField, Tooltip } from "@material-ui/core";
 import {SearchContext} from "../../context/GlobalContext";
 
 const Search = () => {
@@ -12,6 +12,7 @@ const Search = () => {
     
     return (
         <form className={styles.container} onSubmit={null}>
+            <Tooltip title='Search Bar'>
             <TextField
                 margin='normal'
                 id="standard-basic"
@@ -19,6 +20,7 @@ const Search = () => {
                 onChange={handleChange}
                 className={styles.searchbox}
             />
+            </Tooltip>
         </form>
     );
 };

@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import styles from './ImageResults.module.css';
-import {GridList, GridListTile, Card, CardMedia, IconButton, Snackbar, Grid} from "@material-ui/core";
+import {GridList, GridListTile, Card, CardMedia, IconButton, Tooltip} from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/FavoriteBorder';
 import LinkIcon from '@material-ui/icons/Link';
 import {APIContext, FavouritesContext} from "../../context/GlobalContext";
@@ -9,7 +9,6 @@ import {store} from 'react-notifications-component';
 const ImageResults = () => {
     const [api, getAPI ] = useContext(APIContext);
     const [favourites, setFavourites] = useContext(FavouritesContext);
-    const [notification, setNotification] = useState(false);
     const data = api.hits;
     
     
@@ -33,7 +32,7 @@ const ImageResults = () => {
             container: 'top-right',
             insert: 'top',
             dismiss: {
-                duration: 2000,
+                duration: 5000,
             }
         })
     }
@@ -56,10 +55,14 @@ const ImageResults = () => {
                                         onClick={() => handleIconClick(item.largeImageURL)}
                                         color={favourites.includes(item.largeImageURL) ? "secondary" : "inherit"}
                                     >
+                                        <Tooltip title='Favourite this image'>
                                         <FavoriteIcon />
+                                        </Tooltip>
                                     </IconButton>
                                     <IconButton onClick={() => window.open(item.largeImageURL)}>
+                                        <Tooltip title='Open in new tab'>
                                         <LinkIcon />
+                                        </Tooltip>
                                     </IconButton>
                                 </Card>
                             </GridListTile>

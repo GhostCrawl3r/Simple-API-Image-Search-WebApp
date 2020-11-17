@@ -7,9 +7,13 @@ import styles from './Home.module.css';
 import {LoadContext} from "../../context/GlobalContext";
 import ReactNotification from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
+import Pagination from '@material-ui/lab/Pagination';
+
+import {PageData} from "../../context/GlobalContext";
 
 function Home () {
     const [load, setLoad] = useContext(LoadContext);
+    const [page, setPage] = useContext(PageData);
     
     const loadModal = () => {
         return (
@@ -23,6 +27,12 @@ function Home () {
         );
     }
     
+    const handleChange = e => {
+        const pageNum = parseInt(e.target.innerText);
+        setPage(pageNum);
+    }
+    
+    console.log(page);
     return (
                 <div className="app">
                     {load ? (
@@ -36,6 +46,13 @@ function Home () {
                             <Grid>
                                 <ReactNotification />
                                 <ImageResults />
+                            </Grid>
+                            <Grid container>
+                                <Grid item md={5} xs={2}></Grid>
+                                <Grid item xs={9} md={3}>
+                                    <Pagination count={5} page={page} onChange={handleChange}/>
+                                </Grid>
+                                <Grid item md={4} xs={1}></Grid>
                             </Grid>
                         </div>
                     ) : loadModal()}

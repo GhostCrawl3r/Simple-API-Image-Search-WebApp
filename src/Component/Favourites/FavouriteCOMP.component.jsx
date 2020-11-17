@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import styles from './FavouriteCOMP.modules.css';
 import {Typography} from "@material-ui/core";
 import {FavouritesContext} from "../../context/GlobalContext";
-import { GridList, GridListTile} from "@material-ui/core";
+import { GridList, GridListTile, Tooltip} from "@material-ui/core";
 
 
 const FavouriteCOMP = () => {
