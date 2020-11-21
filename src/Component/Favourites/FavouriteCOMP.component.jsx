@@ -16,6 +16,7 @@ const FavouriteCOMP = () => {
         return finalCols;
     }
     
+    
     const handleClick = e => {
         const newARR = [...favourites].filter(item => item !== e);
         setFavourites(newARR);
